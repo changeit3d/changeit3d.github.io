@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>ChangeIt3D</title>
+
+    <meta name="description" content="ChangeIt3D, ShapeTalk, language-assisted-manipulations, ShapeNet, PartNet, ModelNet, neural-listener">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!--Open Graph Related Stuff-->
+  <meta property="og:title" content="ChangeIt3D: Language-Assisted 3D Shape Edits and Deformations"/>
+  <!-- <meta property="og:url" content="https://artemisdataset.org"/> -->
+  <meta property="og:description" content="ChangeIt3D: Language-Assisted 3D Shape Edits and Deformations"/>
+  <meta property="og:site_name" content="ChangeIt3D: Language-Assisted 3D Shape Edits and Deformations"/>
+  <!-- <meta property="og:image" content="https://www.artemisdataset.org/img/teaser.jpeg?v=2"/> -->
+
+  <!--Twitter Card Stuff-->
+  <!-- <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="ArtEmis: Affective Language for Visual Art"/>
+  <meta name="twitter:image" content="https://www.artemisdataset.org/img/teaser.jpeg?v=2">
+  <meta name="twitter:url" content="https://artemisdataset.org"/>
+  <meta name="twitter:description" content="ArtEmis: Affective Language for Visual Art"/>
+ -->
+
+    <link rel="icon" type="image/png" href="img/changeit3d_favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+
+<body>
+
+<div class="container" id="main">
+    <div class="row">
+
+        <h2 class="col-md-12 text-center" style="padding-bottom:20px">
+            <span style="font-size:35pt"><b>ChangeIt3D:<br>Language-Assisted 3D Shape Edits and Deformations</b></span>
+        </h2>
+    </div>
+
+
+    <div class="row" id="authors">
+
+        <div class="col-md-12 text-center">
+            <ul class="list-inline" style="font-size:17pt;">
+                <li>
+                    <a href="https://optas.github.io/">
+                        Panos Achlioptas
+                    </a>
+                    <sup>1,2</sup>
+                </li>
+                <li>
+                    <a href="https://ianhuang0630.github.io">
+                        Ian Huang
+                    </a>
+                    <sup>2</sup>
+                </li>
+                <li>
+                    <a href="https://mhsung.github.io/">
+                        Minhyuk Sung
+                    </a>
+                    <sup>3</sup>
+                </li>
+                <br>
+                <li>
+                    <a href="http://www.stulyakov.com/">
+                        Sergey Tulyuakov
+                    </a>
+                    <sup>1</sup>
+                </li>
+                <li>
+                    <a href="https://geometry.stanford.edu/member/guibas">
+                        Leonidas Guibas
+                    </a>
+                    <sup>2</sup>
+                </li>
+            </ul>
+            <ul style="list-style-type:none;">
+                <li style="font-size: 14pt;">Snap Inc.<sup>1</sup</li>
+                <li style="font-size: 14pt;">Stanford University <sup>2</sup</li>
+                <li style="font-size: 14pt;">Korea Advanced Institute of Science and Technology<sup>3</sup> </li>
+            </ul>
+        </div>
+    </div>
+ 
+    <div class="row" style="padding-top:45px">
+        <div class="col-md-8 col-md-offset-2 text-center">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Achlioptas_ArtEmis_Affective_Language_for_Visual_Art_CVPR_2021_paper.pdf" class="imageLink">
+                        <img src="img/arxiv_paper.png"  width="60" height="80">
+                        <h4><strong>[Paper]</strong></h4>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#videos">
+                        <img src="img/video_.png"  width="80" height="80">
+                        <h4><strong>[Videos]</strong></h4>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#dataset">
+                        <img src="img/shapetalk_favicon.png" width="140" height="80">
+                        <h4><strong>[Dataset]</strong></h4>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#code">
+                        <img src="img/github.png" style="padding:10pt" width="80" height="80">
+                        <h4><strong>[Code]</strong></h4>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="materials/artemis_supplemental.pdf" class="imageLink">
+                        <img src="img/supplemental_image.png"  width="60" height="80">
+                        <h4><strong>[Supplemental Material]</strong></h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="row" style="padding-bottom:30px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                <b>Abstract</b>
+            </h3>
+            <p class="text-justify">                
+                We present a novel large-scale dataset and accompanying machine learning models aimed at providing a detailed understanding of the interplay between visual content, its <b>emotional effect</b>, and <b>explanations</b> for the latter in <b>language</b>. In contrast to most existing annotation datasets in computer vision, we focus on the affective experience triggered by visual artworks and ask the annotators to indicate the dominant emotion they feel for a given image and, crucially, to also provide a grounded verbal explanation for their emotion choice. As we demonstrate below, this leads to a rich set of signals for both the objective content and the affective impact of an image, creating associations with abstract concepts (e.g., <span>&#8220;</span><i>freedom</i><span>&#8221;</span> or <span>&#8220;</span><i>love</i><span>&#8221;</span>), or references that go <i>beyond</i> what is directly visible, including visual <b>similes</b> and <b>metaphors</b>, or <b>subjective references</b> to personal experiences. We focus on visual art (e.g., paintings, artistic photographs) as it is a prime example of imagery created to elicit emotional responses from its viewers. Our dataset, termed ArtEmis, contains <b>455K</b> emotion attributions and explanations from humans, on <b>80K</b> artworks from WikiArt. Building on this data, we train and demonstrate a series of captioning systems capable of expressing and explaining emotions from visual stimuli. Remarkably, the captions produced by these systems often succeed in reflecting the semantic and abstract content of the image, going well beyond systems trained on existing datasets.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="row" id="qualitative_results" style="padding-bottom:30px">
+        <div class="col-md-8 col-md-offset-2" >
+            <h3 style="margin-bottom:30px">
+                <b>Qualitative Results</b>
+            </h3>
+
+                <figure style="padding-bottom:80px">
+                    <img src="img/speaker_productions_teaser.png" style="padding-bottom:15px" class="img-responsive">
+                    <figcaption style="background-color:aliceblue;padding:10px">
+                        <b>Examples of neural speaker productions on <i>unseen</i> artworks.</b>
+                        The produced explanations reflect a variety of dominant emotional-responses (shown above each utterance in bold font).
+                        The top row shows examples where the deduced grounding emotion is positive; the bottom row shows three examples where the
+                        grounding emotion is negative and an example from the something-else category. Remarkably, the neural speaker produces
+                        pragmatic explanations that include <b>visual analogies</b>: <i> a floating mountain, a sky that looks like fire</i>, and <b>nuanced</b> explanations
+                        of affect: <i>calm and meditative, pain and suffering</i>.
+                    </figcaption>
+                </figure>
+
+                <figure style="padding-bottom:80px;">
+                    <img src="img/effect_of_grounding_with_emotion.png" style="padding-bottom:15px;" class="img-responsive">
+                    <figcaption style="background-color:aliceblue;padding:10px">
+                        <b>Grounding the neural speaker with a desired emotion.</b> These examples demonstrate the effect of grounding
+                        our neural speaker with a desired emotional reaction. For each painting we produce two explanations by grounding the speaker with two emotions (shown in bold font). It is interesting how the speaker can adapt the explanation to reflect the desired/grounding emotion while staying relevant to the
+                        content of each painting.
+                    </figcaption>
+                </figure>
+
+                <figure style="padding-bottom:80px">
+                <img src="img/failure_examples.png" class="img-responsive" style="padding-bottom:10px;" alt="overview">
+                <figcaption style="background-color:aliceblue;padding:10px">
+                    <b>Typical failure cases of neural generations.</b> While the generations of our neural speakers are intriguing and a first step to
+                    a new direction: <i>affective captioning</i>; they have a long way to go before they become as soulful and diverse as their human-made counterparts.
+                    Here, we see how our neural speakers can make mistakes at the basic object-recognition level of reasoning e.g., (a) and (b), or mode-collapse to `vanilla'-like explanations e.g., (c) and (d).
+                </figcaption>
+            </figure>
+
+        </div>
+    </div>
+
+  <!--   <div class="row" id="videos" style="padding-bottom:30px">
+        <div class="col-md-10 col-md-offset-2">
+            <h3>
+                <b>Videos</b>
+            </h3>
+
+
+            <div class="row">
+                <div class="col-md-5">
+
+                    <iframe width=100% height=300px frameBorder=0
+                        src="https://www.youtube.com/embed/RZ5AS0pnEtc">
+                    </iframe>
+
+
+                    <figcaption style="width:105%;height:42px;background-color:lightpink; text-align:center;">
+                        <b>Quick</b> overview of ArtEmis.
+                    </figcaption>
+                </div>
+
+                <div class="col-md-5">
+                    <iframe width=100% height=300px frameBorder=0 src="https://youtube.com/embed/uoYiTYISXLI?showinfo=0">
+                    </iframe>
+                    <figcaption style="background-color:lightpink; text-align:center;">
+                        Explore the ~80K artworks used in ArtEmis,<br> in a <b>8 minutes</b>!
+                    </figcaption>
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+
+    <!-- <div class="row" id="license" style="padding-bottom:30px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                <b>License</b>
+            </h3>
+            The ShapeTalk dataset is released under the <a href="materials/shapetalk_terms_of_use.txt">ShapeTalk Terms of Use</a>, and our code is released under the <a href="materials/MIT_license.txt">MIT license</a>.
+        </div>
+    </div> -->
+
+<!-- 
+    <div class="row" id="dataset" style="padding-bottom:30px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>                
+                <b>Dataset</b>
+            </h3>
+
+            <ul>
+                <li>To download the ArtEmis dataset (<b>~455K</b> annotations) please fill out this <a href="https://forms.gle/7eqiRgb764uTuexd7">form, accepting the Terms of Use</a>.
+                </li>
+
+            </ul>
+            <br>
+            <h4>
+                <b>Browse</b>
+            </h4>
+            <p class="text-justify">You can browse the ArtEmis annotations <a href="http://18.118.85.87:8501">here</a>.</p>
+
+            <a href="http://18.118.85.87:8501/">
+                <img src="materials/browser_img.png" class="img-responsive">
+            </a>
+            <br>
+        </div>
+    </div> -->
+
+
+  <!--       <div class="row" id="code" style="padding-bottom:30px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>                
+                <b>Code</b>
+            </h3>
+            <ul class="list-unstyled" style="font-size:14pt;">                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                      </svg>
+                
+
+                    <a href="https://github.com/optas/artemis" style="padding-right:5pt">
+                        Evaluation/Dataset Tools
+                    </a>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                      </svg>
+                    <a href="https://github.com/optas/artemis" style="padding-right:5pt">
+                        Speaker Tools A
+                    </a>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                      </svg>
+                    <a href="https://github.com/Kilichbek/artemis-m2-transformer" style="padding-right:5pt">
+                        Speaker Tools B
+                    </a>            
+            </ul>
+        </div>
+    </div>
+ -->
+
+    <div class="row" id="citation" style="padding-bottom:30px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                <b>Citation</b>
+            </h3>
+            <p class="text-justify">If you find our work useful in your research, please consider citing:</p>
+
+            <pre class="w1-panel w3-leftbar w3-light-grey">
+            @article{achlioptas2022changeIt3D,
+                title={Language-Assisted 3D Shape Edits and Deformations},
+                author={Achlioptas, Panos and Huang, Ian and Sung, Minhyuk,
+                         and Tulyakov, Sergey and Guibas, Leonidas},
+                journal = {CoRR},
+                volume = {abs/},
+                year={2022}}</pre>
+
+        </div>
+    </div>
+
+
+    <!-- <div class="row" id="contact" style="padding-bottom:30px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                <b>Contact</b>
+            </h3>
+            To contact the authors please use <i>artemis.dataset@gmail.com</i>
+        </div>
+    </div> -->
+
+    <div class="row" style="padding-bottom:30px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                <b>Acknowledgements</b>
+            </h3>
+            <p class="text-justify">
+                <!-- This work is funded by a Vannevar Bush Faculty Fellowship, a KAUST BAS/1/1685-01-01, a CRG-2017-3426,
+                the ERC Starting Grant No. 758800 (EXPROTEA) and the ANR AI Chair AIGRETTE, and gifts from the
+                Adobe, Amazon AWS, Autodesk, and Snap corporations. The authors wish to thank Fei Xia and Jan Dombrowski
+                for their help with the AMT instruction design and Nikos Gkanatsios for several fruitful discussions.
+                The authors want to emphasize their gratitude to all the hard working Amazon Mechanical Turkers
+                without whom this work would not be possible. -->
+            </p>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:40px">
+        <div class="col-md-6 col-md-offset-3">
+        <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=080808&w=a&t=tt&d=2u0es-k4gUQLQS9QD76xJ-rpuT-YO8fJ1Fv_20Ir23I&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080"></script>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>
