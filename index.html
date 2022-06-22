@@ -47,7 +47,7 @@
     <div class="row">
 
         <h2 class="col-md-12 text-center" style="padding-bottom:20px">
-            <span style="font-size:35pt"><b>ChangeIt3D:<br>Language-Assisted 3D Shape Edits and Deformations</b></span>
+            <span style="font-size:35pt"><b><i>ChangeIt3D:</i><br>Language-Assisted <br>3D Shape Edits and Deformations</b></span>
         </h2>
     </div>
 
@@ -100,14 +100,14 @@
         <div class="col-md-8 col-md-offset-2 text-center">
             <ul class="nav nav-pills nav-justified">
                 <li>
-                    <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Achlioptas_ArtEmis_Affective_Language_for_Visual_Art_CVPR_2021_paper.pdf" class="imageLink">
+                    <a href="materials/changeIt3d_main_paper.pdf" class="imageLink">
                         <img src="img/arxiv_paper.png"  width="60" height="80">
                         <h4><strong>[Paper]</strong></h4>
                     </a>
                 </li>
 
                 <li>
-                    <a href="materials/artemis_supplemental.pdf" class="imageLink">
+                    <a href="materials/changeIt3d_supplemental_material.pdf" class="imageLink">
                         <img src="img/supplemental_image.png"  width="60" height="80">
                         <h4><strong>[Supplemental Material]</strong></h4>
                     </a>
@@ -154,6 +154,74 @@
             </p>
         </div>
     </div>
+    
+
+  <div class="row" id="dataset" style="padding-bottom:30px">
+        <div class="col-md-8 col-md-offset-2" >
+            <h3 style="margin-bottom:30px">
+                <b>The ShapeTalk Dataset</b>
+            </h3>
+
+                <div class="zoom">
+                <figure style="padding-bottom:80px">
+                    <img src="img/teaser_v3.jpeg" style="padding-bottom:15px" class="img-responsive">                    
+
+                    <figcaption style="background-color:lightskyblue;padding:10px">
+                        <b>ShapeTalk covers <u>30</u> common object classes, with <u>540K</u> contrastive utterances</b>. Samples of those utterances are shown above. In each sub-box <i>shape differences</i> between a target and a distractor object of the same class are enumerated by an annotator (by decreasing order of importance in the annotator’s judgement). Interestingly, <i>both continuous and discrete</i> geometric features that shapes share across categories emerge in the language of ShapeTalk; e.g., humans describe the <font color="green">“thinness”</font> of a chair leg or of a vase lip or of a blade handle (top boxes), or the presence of a semantic-part (<font color="red">“arm”</font>) that a lamp or a clock or a monitor can have (bottom boxes).                        
+                    </figcaption>
+                </figure>
+                </div>
+
+                <!-- <br><br><br><br> -->
+                <!-- <div class="zoom"> -->
+                <figure style="padding-bottom:80px;">
+                    <img src="img/shapetalk_analysis.png" style="padding-bottom:15px;" class="img-responsive">
+                    <figcaption style="background-color:lightskyblue;padding:10px">
+                        <b>Key characteristics of ShapeTalk.</b> Blah blah.
+                    </figcaption>
+                </figure>                
+            
+
+            <h4>
+                <b>Browse</b>
+            </h4>
+            <p class="text-justify">You can browse the ShapeTalk annotations <a href="">here</a>.</p>
+
+            <a href="">
+                <img src="materials/browser_img.png" class="img-responsive">
+            </a>
+            
+            <br>
+                        
+            <h4>
+                <b>License & Download</b>
+            </h4>
+            <ul>
+
+                <li>The ShapeTalk dataset is released under the <a href="materials/shapetalk_terms_of_use.txt">ShapeTalk Terms of Use</a>, and our code is released under the <a href="materials/MIT_license.txt">MIT license</a>. </li>
+                <li>To download the ShapeTalk dataset (<b>~XX</b> annotations) please fill out this <a href="https://forms.gle/gqLEuBcgFGcQhikk9">form</a>, accepting the <a href="materials/shapetalk_terms_of_use.txt">Terms of Use</a>.
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+       <div class="row" id="changeIt3DNet" style="padding-bottom:30px">
+        <div class="col-md-8 col-md-offset-2" >
+            <h3 style="margin-bottom:30px">
+                <b>ChangeIt3D Architecture</b>
+            </h3>
+
+                <figure style="padding-bottom:80px">
+                    <img src="img/changeIt3DNet.png" style="padding-bottom:15px" class="img-responsive">
+                    <figcaption style="background-color:aliceblue;padding:10px">
+                        <b>TODO</b>                        
+                    </figcaption>
+                </figure>
+            </div>
+        </div>        
 
 
     <div class="row" id="qualitative_results" style="padding-bottom:30px">
@@ -165,6 +233,7 @@
                 <figure style="padding-bottom:80px">
                     <img src="img/speaker_productions_teaser.png" style="padding-bottom:15px" class="img-responsive">
                     <figcaption style="background-color:aliceblue;padding:10px">
+
                         <b>Examples of neural speaker productions on <i>unseen</i> artworks.</b>
                         The produced explanations reflect a variety of dominant emotional-responses (shown above each utterance in bold font).
                         The top row shows examples where the deduced grounding emotion is positive; the bottom row shows three examples where the
@@ -227,102 +296,37 @@
         </div>
     </div> -->
 
-    <!-- <div class="row" id="license" style="padding-bottom:30px">
-        <div class="col-md-8 col-md-offset-2">
-            <h3>
-                <b>License</b>
-            </h3>
-            The ShapeTalk dataset is released under the <a href="materials/shapetalk_terms_of_use.txt">ShapeTalk Terms of Use</a>, and our code is released under the <a href="materials/MIT_license.txt">MIT license</a>.
-        </div>
-    </div> -->
 
-<!-- 
-    <div class="row" id="dataset" style="padding-bottom:30px">
-        <div class="col-md-8 col-md-offset-2">
-            <h3>                
-                <b>Dataset</b>
-            </h3>
-
-            <ul>
-                <li>To download the ArtEmis dataset (<b>~455K</b> annotations) please fill out this <a href="https://forms.gle/7eqiRgb764uTuexd7">form, accepting the Terms of Use</a>.
-                </li>
-
-            </ul>
-            <br>
-            <h4>
-                <b>Browse</b>
-            </h4>
-            <p class="text-justify">You can browse the ArtEmis annotations <a href="http://18.118.85.87:8501">here</a>.</p>
-
-            <a href="http://18.118.85.87:8501/">
-                <img src="materials/browser_img.png" class="img-responsive">
-            </a>
-            <br>
-        </div>
-    </div> -->
-
-
-  <!--       <div class="row" id="code" style="padding-bottom:30px">
-        <div class="col-md-8 col-md-offset-2">
-            <h3>                
-                <b>Code</b>
-            </h3>
-            <ul class="list-unstyled" style="font-size:14pt;">                
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                      </svg>
-                
-
-                    <a href="https://github.com/optas/artemis" style="padding-right:5pt">
-                        Evaluation/Dataset Tools
-                    </a>
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                      </svg>
-                    <a href="https://github.com/optas/artemis" style="padding-right:5pt">
-                        Speaker Tools A
-                    </a>
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                      </svg>
-                    <a href="https://github.com/Kilichbek/artemis-m2-transformer" style="padding-right:5pt">
-                        Speaker Tools B
-                    </a>            
-            </ul>
-        </div>
-    </div>
- -->
 
     <div class="row" id="citation" style="padding-bottom:30px">
         <div class="col-md-8 col-md-offset-2">
             <h3>
-                <b>Citation</b>
+                <b>Citations</b>
             </h3>
             <p class="text-justify">If you find our work useful in your research, please consider citing:</p>
 
             <pre class="w1-panel w3-leftbar w3-light-grey">
-            @article{achlioptas2022changeIt3D,
-                title={Language-Assisted 3D Shape Edits and Deformations},
-                author={Achlioptas, Panos and Huang, Ian and Sung, Minhyuk
-                         and Tulyakov, Sergey and Guibas, Leonidas},
-                journal = {CoRR},
-                volume = {abs/},
-                year={2022}}</pre>
+@article{achlioptas2022changeIt3D,
+    title={Language-Assisted 3D Shape Edits and Deformations},
+    author={Achlioptas, Panos and Huang, Ian and Sung, Minhyuk and Tulyakov, Sergey and Guibas, Leonidas},
+    journal={CoRR},
+    volume={abs/},
+    year={2022}}</pre>
+
+        <p class="text-justify">Also, if you you use the ShapeTalk dataset, or the above paper's relevant experiments, please also consider citing our previous paper/data, <a href="https://ai.stanford.edu/~optas/shapeglot/"> ShapeGlot</a> which was used to augment/build ShapeTalk:</p>
+
+        <pre class="w1-panel w3-leftbar w3-light-grey">
+@inproceedings{achlioptas2019shapeglot,
+    title={{ShapeGlot}: Learning Language for Shape Differentiation},
+    author={Achlioptas, Panos and Fan, Judy and Hawkins, Robert and Goodman, Noah  and Guibas, Leonidas},
+    booktitle = {International Conference on Computer Vision (ICCV)},
+    year={2019}}</pre>
+
 
         </div>
     </div>
 
 
-    <!-- <div class="row" id="contact" style="padding-bottom:30px">
-        <div class="col-md-8 col-md-offset-2">
-            <h3>
-                <b>Contact</b>
-            </h3>
-            To contact the authors please use <i>artemis.dataset@gmail.com</i>
-        </div>
-    </div> -->
 
     <div class="row" style="padding-bottom:30px">
         <div class="col-md-8 col-md-offset-2">
@@ -330,12 +334,12 @@
                 <b>Acknowledgements</b>
             </h3>
             <p class="text-justify">
-                <!-- This work is funded by a Vannevar Bush Faculty Fellowship, a KAUST BAS/1/1685-01-01, a CRG-2017-3426,
-                the ERC Starting Grant No. 758800 (EXPROTEA) and the ANR AI Chair AIGRETTE, and gifts from the
-                Adobe, Amazon AWS, Autodesk, and Snap corporations. The authors wish to thank Fei Xia and Jan Dombrowski
-                for their help with the AMT instruction design and Nikos Gkanatsios for several fruitful discussions.
-                The authors want to emphasize their gratitude to all the hard working Amazon Mechanical Turkers
-                without whom this work would not be possible. -->
+                This work is funded by a Vannevar Bush Faculty Fellowship, a KAUST BAS/1/1685-01-01, a CRG-2017-3426,
+                and the ANR AI Chair AIGRETTE, and gifts from the
+                Adobe, Amazon AWS, Autodesk, and Snap corporations. 
+                Panos Achlioptas wish to thank for their advices and help the following researchers: Iro Armeni (data collection), Nikos Gkanatsios (neural-listening), Ahmed Abdelreheem (rendering), Yan Zheng and Ruojin Cai (SGF deployment), Antonia Saravanou and Mingyi Lu (relevant discussions) and Menglei Chai (CLIP-NeRF). 
+                Last but not least, the authors want to emphasize their gratitude to all the hard-working Amazon Mechanical Turkers
+                without whom this work would be impossible.
             </p>
         </div>
     </div>
@@ -348,5 +352,24 @@
 
 </div>
 </body>
+
+
+<!-- Panos Added Style Stuff -->
+
+<style>
+.zoom {
+  padding: 50px;
+  /*background-color: green;*/
+  transition: transform .2s; /* Animation */
+  /*width: 200px;*/
+  /*height: 200px;*/
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.75); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+</style>
+
 
 </html>
