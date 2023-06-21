@@ -2,7 +2,7 @@
 <html>
 
 <head lang="en">
-    <title>ChangeIt3D</title>
+    <title>ShapeTalk</title>
 
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">    
@@ -11,18 +11,18 @@
 
 
     <!--Open Graph Related Stuff-->
-    <meta property="og:title" content="ChangeIt3D: Language-Assisted 3D Shape Edits and Deformations"/>
+    <meta property="og:title" content="ShapeTalk: A Language Dataset and Framework for 3D Shape Edits and Deformations"/>
     <meta property="og:url" content="https://https://changeit3d.github.io"/>
-    <meta property="og:description" content="ChangeIt3D: Language-Assisted 3D Shape Edits and Deformations"/>
+    <meta property="og:description" content="ShapeTalk: A Language Dataset and Framework for 3D Shape Edits and Deformations"/>
     <meta property="og:site_name" content="ChangeIt3D: Language-Assisted 3D Shape Edits and Deformations"/>  
     <meta property="og:image" content="https://changeit3d.github.io/img/changeit3d_favicon.png"/>
 
     <!--Twitter Card Stuff-->
     <meta name="twitter:card" content="shttps://changeit3d.github.io/img/changeit3d_favicon.png"/>
-    <meta name="twitter:title" content="ChangeIt3D: Language-Assisted 3D Shape Edits and Deformations"/>
+    <meta name="twitter:title" content="ShapeTalk: A Language Dataset and Framework for 3D Shape Edits and Deformations"/>
     <meta name="twitter:image" content="https://changeit3d.github.io/img/changeit3d_favicon.png">
     <meta name="twitter:url" content="https://https://changeit3d.github.io"/>
-    <meta name="twitter:description" content="ChangeIt3D: Language-Assisted 3D Shape Edits and Deformations"/>
+    <meta name="twitter:description" content="ShapeTalk: A Language Dataset and Framework for 3D Shape Edits and Deformations"/>
    
 
     <link rel="icon" type="image/png" href="img/changeit3d_favicon.png">
@@ -47,7 +47,9 @@
     <div class="row">
 
         <h2 class="col-md-12 text-center" style="padding-bottom:20px">
-            <span style="font-size:35pt"><b><i>ChangeIt3D:</i><br>Language-Assisted <br>3D Shape Edits and Deformations</b></span>
+            <span style="font-size:35pt"><b><i>ShapeTalk:</i><br>A Language Dataset <br>and Framework for 3D Shape Edits and Deformations</b></span>
+
+
         </h2>
     </div>
 
@@ -114,14 +116,6 @@
                     </a>
                 </li>
 
-
-                <!-- <li>
-                    <a href="#videos">
-                        <img src="img/video_.png"  width="80" height="80">
-                        <h4><strong>[Videos]</strong></h4>
-                    </a>
-                </li> -->
-
                 <li>
                     <a href="https://github.com/optas/changeit3d">
                         <img src="img/github.png"height="80">
@@ -146,8 +140,8 @@
             <h3>
                 <b>News</b>
             </h3>
-            <ul>    <li>[March 5, 2023] A version of this work is provisionally accepted in <a href="https://cvpr2023.thecvf.com/">CVPR-2023</a>.</li>
-                    <li>[Dec. 13, 2022] <font color="red"> <b>This webpage is still under construction!</b></font> It has limited functionality.</li>
+            <ul>    <li>[March 5, 2023] A version of this work is provisionally accepted in <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Achlioptas_ShapeTalk_A_Language_Dataset_and_Framework_for_3D_Shape_Edits_CVPR_2023_paper.pdf">CVPR-2023</a>.</li>
+                    <!-- <li>[Dec. 13, 2022] <font color="red"> <b>This webpage is still under construction!</b></font> It has limited functionality.</li> -->
                 </ul>                
 
         </div>
@@ -160,8 +154,8 @@
             <h3>
                 <b>Abstract</b>
             </h3>
-            <p class="text-justify">                
-                In this work, we address the task of <i>Language-Assisted 3D Shape Edits and Deformations</i> (which we name <b>ChangeIt3D</b>). Given a 3D representation of an object and free-form natural language describing desired changes or modifications to the shape of the object, the task is to transform the input object's geometry in a manner that reflects the requested changes -- for example, to modify a 3D chair model to <i>make its legs thinner</i>, or to <i>open a hole in its back</i>. To tackle this problem in a way that promotes open-ended language usage allowing fine-grained shape edits, we introduce the largest existing corpus of natural language describing shape differences, which we call <b>ShapeTalk</b>. This dataset contains over <b>half a million discriminative utterances</b> produced by contrasting the shapes of pairs of common 3D objects for a variety of object classes and degrees of similarity. We introduce <b>metrics</b> for the quantitative evaluation of language-assisted shape editing methods that reflect key desiderata within this editing setup. We also design an effective and modular <b>framework</b> for ChangeIt3D that can combine an arbitrary 3D generative model of shapes with our in-house, ShapeTalk-based, text-to-shape neural listener. Crucially, our modules are trained and deployed directly in a latent space of 3D shapes, bypassing the ambiguities of <span>&#8220;</span>lifting<span>&#8221;</span> 2D to 3D when using extant foundation models and thus opening a new avenue for 3D object-centric manipulation through language.                 
+            <p class="text-justify"> 
+                Editing 3D geometry is a challenging task requiring specialized skills. In this work, we aim to facilitate the task of editing the geometry of 3D models through the use of natural language. For example, we may want to modify a 3D chair model to “make its legs thinner” or to “open a hole in its back”. To tackle this problem in a manner that promotes <i>open-ended</i> language use and enables <i>fine-grained</i> shape edits, we introduce the most extensive existing corpus of natural language utterances describing shape differences: <b>ShapeTalk</b>. ShapeTalk contains over half a million discriminative utterances produced by con- trasting the shapes of common 3D objects for a variety of object classes and degrees of similarity. We also introduce a generic framework, <b>ChangeIt3D</b>, which builds on ShapeTalk and can use an <i>arbitrary</i> 3D generative model of shapes to produce edits that align the output better with the edit or deformation description. Finally, we introduce <b>metrics</b> for the <i>quantitative evaluation</i> of language-assisted shape editing methods that reflect key desiderata within this editing setup. We note, that our modules are trained and deployed directly in a latent space of 3D shapes, bypassing the ambiguities of <span>&#8220;</span>lifting<span>&#8221;</span> 2D to 3D when using extant foundation models and thus opening a new avenue for 3D object-centric manipulation through language.
             </p>
         </div>
     </div>
@@ -178,13 +172,14 @@
                     <img src="img/teaser_v3.jpeg" style="padding-bottom:15px" class="img-responsive">                    
 
                     <figcaption style="background-color:aliceblue;padding:10px">
-                        <b>ShapeTalk covers <u>29</u> common object classes, with <u>528K</u> contrastive utterances</b>. Samples of those utterances are shown above. In each sub-box <i>shape differences</i> between a target and a distractor object of the same class are enumerated by an annotator (by decreasing order of importance in the annotator's judgement). Interestingly, <i>both continuous and discrete</i> geometric features that shapes share across categories emerge in the language of ShapeTalk; e.g., humans describe the <font color="green">“thinness”</font> of a chair leg or of a vase lip or of a blade handle (top boxes), or the presence of a semantic-part (<font color="red">“arm”</font>) that a lamp or a clock or a monitor can have (bottom boxes).                        
+                        <b>ShapeTalk covers <u>30</u> common object classes, with <u>536K</u> contrastive utterances</b>. Samples of those utterances are shown above. In each sub-box <i>shape differences</i> between a target and a distractor object of the same class are enumerated by an annotator (by decreasing order of importance in the annotator's judgement). 
+
+                        Interestingly, <i>both continuous and discrete</i> geometric features that shapes share <b>across</b> categories emerge in the language of ShapeTalk; e.g., humans describe the <font color="green">“thinness”</font> of a chair leg or of a vase lip (top row), or the presence of an (<font color="red">“arm”</font>) that a lamp or a clock might have (bottom row).  
                     </figcaption>
                 </figure>
                 </div>
 
-                <!-- <br><br><br><br> -->
-                <!-- <div class="zoom"> -->
+                
                 <figure style="padding-bottom:80px;">
                     <img src="img/shapetalk_analysis.png" style="padding-bottom:15px;" class="img-responsive">
                     <figcaption style="background-color:aliceblue;padding:10px">
